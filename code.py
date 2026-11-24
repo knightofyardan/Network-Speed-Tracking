@@ -5,7 +5,6 @@ import re
 import subprocess
 import time
 
-# --- Definisi Kode Warna ANSI ---
 HIJAU = "\033[92m"
 MERAH = "\033[91m"
 KUNING = "\033[93m"
@@ -18,7 +17,7 @@ def cek_ping_lengkap(host):
     param = "-n" if platform.system().lower() == "windows" else "-c"
 
     try:
-        # Menjalankan ping dan mengambil output
+        # Ping dan output
         output = subprocess.check_output(
             f"ping {param} 1 {host}", shell=True, text=True, stderr=subprocess.STDOUT
         )
